@@ -7,11 +7,11 @@
 
 import UIKit
 
-m6d64657663616d70() // Launching it before everything else
-
-UIApplicationMain(
-    CommandLine.argc,
-    CommandLine.unsafeArgv,
-    nil,
-    NSStringFromClass(AppDelegate.self)
-)
+//m6d64657663616d70() // Launching it before everything else
+//
+//UIApplicationMain(
+//    CommandLine.argc,
+//    CommandLine.unsafeArgv,
+//    nil,
+//    NSStringFromClass(AppDelegate.self)
+//)

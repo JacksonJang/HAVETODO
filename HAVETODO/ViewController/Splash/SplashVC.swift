@@ -11,5 +11,6 @@ class SplashVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        localAuthentication()
     }
 }
