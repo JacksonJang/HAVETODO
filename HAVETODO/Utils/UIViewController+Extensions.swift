@@ -23,18 +23,19 @@ extension UIViewController {
         if let naviVC = self.getRootNaviVC() {
             naviVC.pushViewController(vc, animated: animated)
             
-//            if vc.isKind(of: MainTabBarController.self) {
-//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0){
-//                //메인으로 갈때는 무조건 이전 VC들 삭제
-//                    naviVC.viewControllers.removeAll(where:{ (subVC) -> Bool in
-//                        if subVC.isKind(of: MainTabBarController.self) {
-//                            return false
-//                        } else {
-//                            return true
-//                        }
-//                    })
-//                }
-//            }
+            if vc.isKind(of: MainVC.self) {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0){
+                //메인으로 갈때는 무조건 이전 VC들 삭제
+                    naviVC.viewControllers.removeAll(where:{ (subVC) -> Bool in
+                        if subVC.isKind(of: MainVC.self) {
+                            return false
+                        } else {
+                            return true
+                        }
+                    })
+                }
+            }
+            
         }
     }
 }

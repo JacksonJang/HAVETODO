@@ -7,10 +7,17 @@
 
 import UIKit
 
-class SplashVC: BaseViewController {
+class SplashVC: BaseViewController, Storyboarded {
+    static var storyboardName: String = String(describing: SplashVC.self)
+    
+    @IBOutlet var testButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        localAuthentication()
+    }
+    
+    @IBAction func onTouchTest(_ sender: UIButton) {
+        goNaviTo(MainVC.instantiate())
     }
 }

@@ -11,6 +11,8 @@
 		3E3BF502275A06DB0014B18D /* anti_debug.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BF501275A06DB0014B18D /* anti_debug.c */; };
 		3E3BF506275A09F70014B18D /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BF505275A09F70014B18D /* Authentication.swift */; };
 		3E3BF509275A0AC30014B18D /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3BF508275A0AC30014B18D /* LocalAuthentication.framework */; };
+		3E3BF50B275CB0ED0014B18D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BF50A275CB0ED0014B18D /* MainVC.swift */; };
+		3E3BF50E275CB1110014B18D /* MainVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E3BF50D275CB1110014B18D /* MainVC.storyboard */; };
 		3E7CEAEE2753A496008219CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CEAED2753A496008219CC /* AppDelegate.swift */; };
 		3E7CEAF52753A496008219CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7CEAF32753A496008219CC /* Main.storyboard */; };
 		3E7CEAF72753A498008219CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7CEAF62753A498008219CC /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		3E3BF504275A075A0014B18D /* HAVETODO-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HAVETODO-Bridging-Header.h"; sourceTree = "<group>"; };
 		3E3BF505275A09F70014B18D /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		3E3BF508275A0AC30014B18D /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		3E3BF50A275CB0ED0014B18D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		3E3BF50D275CB1110014B18D /* MainVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainVC.storyboard; sourceTree = "<group>"; };
 		3E7CEAEA2753A496008219CC /* HAVETODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAVETODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7CEAED2753A496008219CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E7CEAF42753A496008219CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +68,14 @@
 				3E3BF508275A0AC30014B18D /* LocalAuthentication.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E3BF50C275CB0F10014B18D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3E3BF50D275CB1110014B18D /* MainVC.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		3E7CEAE12753A496008219CC = {
@@ -160,6 +172,7 @@
 		3E7CEB0D2753A6ED008219CC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3E3BF50A275CB0ED0014B18D /* MainVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -175,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				3E7CEB142753A7B2008219CC /* Splash */,
+				3E3BF50C275CB0F10014B18D /* Main */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -254,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E3BF50E275CB1110014B18D /* MainVC.storyboard in Resources */,
 				3E7CEAFA2753A498008219CC /* LaunchScreen.storyboard in Resources */,
 				3E7CEAF72753A498008219CC /* Assets.xcassets in Resources */,
 				3E7CEB132753A746008219CC /* SplashVC.storyboard in Resources */,
@@ -272,6 +287,7 @@
 				3E7CEAEE2753A496008219CC /* AppDelegate.swift in Sources */,
 				3E3BF4FE275A06970014B18D /* main_temp.swift in Sources */,
 				3E3BF506275A09F70014B18D /* Authentication.swift in Sources */,
+				3E3BF50B275CB0ED0014B18D /* MainVC.swift in Sources */,
 				3E7CEB172753A7EE008219CC /* Storyboarded.swift in Sources */,
 				3E7CEB092753A66B008219CC /* BaseViewController.swift in Sources */,
 				3E3BF502275A06DB0014B18D /* anti_debug.c in Sources */,
