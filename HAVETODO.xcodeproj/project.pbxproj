@@ -15,6 +15,7 @@
 		3E3BF50E275CB1110014B18D /* MainVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E3BF50D275CB1110014B18D /* MainVC.storyboard */; };
 		3E3BF514275CB55A0014B18D /* MemoListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3BF513275CB55A0014B18D /* MemoListVC.xib */; };
 		3E3BF516275CB5650014B18D /* MemoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BF515275CB5650014B18D /* MemoListVC.swift */; };
+		3E3BF519275CBE480014B18D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BF518275CBE480014B18D /* Constants.swift */; };
 		3E7CEAEE2753A496008219CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CEAED2753A496008219CC /* AppDelegate.swift */; };
 		3E7CEAF52753A496008219CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7CEAF32753A496008219CC /* Main.storyboard */; };
 		3E7CEAF72753A498008219CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7CEAF62753A498008219CC /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		3E3BF50D275CB1110014B18D /* MainVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainVC.storyboard; sourceTree = "<group>"; };
 		3E3BF513275CB55A0014B18D /* MemoListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoListVC.xib; sourceTree = "<group>"; };
 		3E3BF515275CB5650014B18D /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
+		3E3BF518275CBE480014B18D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3E7CEAEA2753A496008219CC /* HAVETODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAVETODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7CEAED2753A496008219CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E7CEAF42753A496008219CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +100,13 @@
 			path = Memo;
 			sourceTree = "<group>";
 		};
+		3E3BF517275CBDB90014B18D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		3E7CEAE12753A496008219CC = {
 			isa = PBXGroup;
 			children = (
@@ -123,10 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				3E7CEAED2753A496008219CC /* AppDelegate.swift */,
+				3E7CEB082753A66B008219CC /* BaseViewController.swift */,
 				3E7CEB062753A647008219CC /* Common */,
-				3E7CEB072753A651008219CC /* Data */,
-				3E7CEB052753A63A008219CC /* Utils */,
 				3E7CEB042753A636008219CC /* Lib */,
+				3E7CEB052753A63A008219CC /* Utils */,
 				3E7CEB102753A70D008219CC /* SubView */,
 				3E7CEB112753A720008219CC /* Storyboard */,
 				3E7CEB032753A5F8008219CC /* ViewController */,
@@ -169,17 +178,18 @@
 		3E7CEB062753A647008219CC /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				3E7CEB082753A66B008219CC /* BaseViewController.swift */,
+				3E3BF518275CBE480014B18D /* Constants.swift */,
 				3E7CEB152753A7E2008219CC /* Protocol */,
+				3E7CEB072753A651008219CC /* Model */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		3E7CEB072753A651008219CC /* Data */ = {
+		3E7CEB072753A651008219CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3E7CEB0C2753A6E7008219CC /* Splash */ = {
@@ -201,6 +211,7 @@
 		3E7CEB102753A70D008219CC /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				3E3BF517275CBDB90014B18D /* Common */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -313,6 +324,7 @@
 				3E3BF506275A09F70014B18D /* Authentication.swift in Sources */,
 				3E3BF50B275CB0ED0014B18D /* MainVC.swift in Sources */,
 				3E7CEB172753A7EE008219CC /* Storyboarded.swift in Sources */,
+				3E3BF519275CBE480014B18D /* Constants.swift in Sources */,
 				3E7CEB092753A66B008219CC /* BaseViewController.swift in Sources */,
 				3E3BF502275A06DB0014B18D /* anti_debug.c in Sources */,
 				3E7CEB192753A87F008219CC /* UIViewController+Extensions.swift in Sources */,
