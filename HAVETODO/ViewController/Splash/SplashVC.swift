@@ -18,6 +18,10 @@ class SplashVC: BaseViewController, Storyboarded {
     }
     
     @IBAction func onTouchTest(_ sender: UIButton) {
-        goNaviTo(MainVC.instantiate())
+        //TODO: 정상 로직시 주석 해제
+//        goNaviTo(MainVC.instantiate())
+        
+        goNaviTo(MemoListVC.loadNib())
+        
     }
 }

@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIViewController {
+    static func loadNib() -> Self {
+        return Self.init(nibName: String(describing: Self.self), bundle: Bundle.init(for: Self.self))
+    }
+    
     func onBack() {
         navigationController?.popViewController(animated: true)
     }
@@ -38,4 +42,5 @@ extension UIViewController {
             
         }
     }
+    
 }
