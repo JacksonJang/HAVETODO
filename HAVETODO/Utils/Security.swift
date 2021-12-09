@@ -46,13 +46,6 @@ func hasJailbreak() -> Bool {
     } catch {
         return false
     }
-
-    func canOpen(path: String) -> Bool {
-        let file = fopen(path, "r")
-        guard file != nil else { return false }
-        fclose(file)
-        return true
-    }
     
     /*
      // 탈옥 여부를 체크하고 루트권한이 있는 기기라면 다이얼로그를 띄우고 확인을 누르면 앱을 종료하는 예제
@@ -70,5 +63,11 @@ func hasJailbreak() -> Bool {
              }
 
      */
+}
 
+func canOpen(path: String) -> Bool {
+    let file = fopen(path, "r")
+    guard file != nil else { return false }
+    fclose(file)
+    return true
 }
