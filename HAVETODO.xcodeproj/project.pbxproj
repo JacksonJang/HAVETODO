@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E07CED72761E9E60058F92E /* MemoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E07CED62761E9E50058F92E /* MemoListCell.swift */; };
+		3E07CED92761E9EF0058F92E /* MemoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E07CED82761E9EF0058F92E /* MemoListCell.xib */; };
 		3E3BF4FE275A06970014B18D /* main_temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BF4FD275A06970014B18D /* main_temp.swift */; };
 		3E3BF502275A06DB0014B18D /* anti_debug.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BF501275A06DB0014B18D /* anti_debug.c */; };
 		3E3BF506275A09F70014B18D /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BF505275A09F70014B18D /* Authentication.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E07CED62761E9E50058F92E /* MemoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListCell.swift; sourceTree = "<group>"; };
+		3E07CED82761E9EF0058F92E /* MemoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoListCell.xib; sourceTree = "<group>"; };
 		3E3BF4FD275A06970014B18D /* main_temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main_temp.swift; sourceTree = "<group>"; };
 		3E3BF4FF275A06B40014B18D /* anti_debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = anti_debug.h; sourceTree = "<group>"; };
 		3E3BF501275A06DB0014B18D /* anti_debug.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = anti_debug.c; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				3E3BF515275CB5650014B18D /* MemoListVC.swift */,
+				3E07CED62761E9E50058F92E /* MemoListCell.swift */,
+				3E07CED82761E9EF0058F92E /* MemoListCell.xib */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				3E3BF50E275CB1110014B18D /* MainVC.storyboard in Resources */,
 				3E7CEAFA2753A498008219CC /* LaunchScreen.storyboard in Resources */,
 				3E7CEAF72753A498008219CC /* Assets.xcassets in Resources */,
+				3E07CED92761E9EF0058F92E /* MemoListCell.xib in Resources */,
 				3E7CEB132753A746008219CC /* SplashVC.storyboard in Resources */,
 				3E3BF514275CB55A0014B18D /* MemoListVC.xib in Resources */,
 				3E7CEAF52753A496008219CC /* Main.storyboard in Resources */,
@@ -328,6 +335,7 @@
 				3E7CEB092753A66B008219CC /* BaseViewController.swift in Sources */,
 				3E3BF502275A06DB0014B18D /* anti_debug.c in Sources */,
 				3E7CEB192753A87F008219CC /* UIViewController+Extensions.swift in Sources */,
+				3E07CED72761E9E60058F92E /* MemoListCell.swift in Sources */,
 				3E7CEB0B2753A6D4008219CC /* Extensions.swift in Sources */,
 				3E7CEB4227586088008219CC /* Security.swift in Sources */,
 			);

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemoListVC" customModule="HAVETODO" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="Z78-xZ-ccD" id="1Oc-zg-X80"/>
                 <outlet property="view" destination="iN0-l3-epB" id="1WA-HG-Edn"/>
             </connections>
         </placeholder>
@@ -19,18 +20,30 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGD-CW-2qA">
-                    <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twT-D3-oUi">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z78-xZ-ccD">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Z78-xZ-ccD" secondAttribute="trailing" id="0PC-Oo-caC"/>
+                        <constraint firstItem="Z78-xZ-ccD" firstAttribute="leading" secondItem="twT-D3-oUi" secondAttribute="leading" id="2Ts-8X-RW4"/>
+                        <constraint firstItem="Z78-xZ-ccD" firstAttribute="top" secondItem="twT-D3-oUi" secondAttribute="top" id="lKy-i0-IjM"/>
+                        <constraint firstAttribute="bottom" secondItem="Z78-xZ-ccD" secondAttribute="bottom" id="mp5-Fd-cD3"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="MGD-CW-2qA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="AXM-UO-xAx"/>
-                <constraint firstItem="MGD-CW-2qA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gEu-Ov-Vsk"/>
+                <constraint firstItem="twT-D3-oUi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="643-0m-Vej"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="twT-D3-oUi" secondAttribute="bottom" id="7ju-dV-jRS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="twT-D3-oUi" secondAttribute="trailing" id="pOP-bl-vJT"/>
+                <constraint firstItem="twT-D3-oUi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="zfF-aS-ync"/>
             </constraints>
             <point key="canvasLocation" x="139" y="137"/>
         </view>
