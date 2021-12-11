@@ -29,6 +29,8 @@
 		3E7CEB172753A7EE008219CC /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CEB162753A7EE008219CC /* Storyboarded.swift */; };
 		3E7CEB192753A87F008219CC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CEB182753A87F008219CC /* UIViewController+Extensions.swift */; };
 		3E7CEB4227586088008219CC /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CEB4127586088008219CC /* Security.swift */; };
+		E22B02842764BD37007519A4 /* MemoListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B02832764BD37007519A4 /* MemoListHeaderView.swift */; };
+		E22B02862764BD50007519A4 /* MemoListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E22B02852764BD50007519A4 /* MemoListHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		3E7CEB162753A7EE008219CC /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		3E7CEB182753A87F008219CC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3E7CEB4127586088008219CC /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		E22B02832764BD37007519A4 /* MemoListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListHeaderView.swift; sourceTree = "<group>"; };
+		E22B02852764BD50007519A4 /* MemoListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoListHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 		3E3BF517275CBDB90014B18D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E22B02832764BD37007519A4 /* MemoListHeaderView.swift */,
+				E22B02852764BD50007519A4 /* MemoListHeaderView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				3E7CEAF72753A498008219CC /* Assets.xcassets in Resources */,
 				3E07CED92761E9EF0058F92E /* MemoListCell.xib in Resources */,
 				3E7CEB132753A746008219CC /* SplashVC.storyboard in Resources */,
+				E22B02862764BD50007519A4 /* MemoListHeaderView.xib in Resources */,
 				3E3BF514275CB55A0014B18D /* MemoListVC.xib in Resources */,
 				3E7CEAF52753A496008219CC /* Main.storyboard in Resources */,
 			);
@@ -337,6 +344,7 @@
 				3E7CEB192753A87F008219CC /* UIViewController+Extensions.swift in Sources */,
 				3E07CED72761E9E60058F92E /* MemoListCell.swift in Sources */,
 				3E7CEB0B2753A6D4008219CC /* Extensions.swift in Sources */,
+				E22B02842764BD37007519A4 /* MemoListHeaderView.swift in Sources */,
 				3E7CEB4227586088008219CC /* Security.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -469,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

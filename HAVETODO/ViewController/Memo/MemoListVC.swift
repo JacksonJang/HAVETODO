@@ -23,6 +23,7 @@ class MemoListVC: BaseViewController, Storyboarded {
     @IBOutlet var tableView: UITableView!
     
     var data:[String] = []
+    var headerView:MemoListHeaderView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +34,7 @@ class MemoListVC: BaseViewController, Storyboarded {
         tableView.dropDelegate = self
         tableView.dragInteractionEnabled = true
         tableView.register(UINib(nibName: "MemoListCell", bundle: nil), forCellReuseIdentifier: "MemoListCell")
-        
-        
-        
+        tableView.register(UINib(nibName: "MemoListHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "MemoListHeaderView")
         
         setupUI()
     }
@@ -48,6 +47,9 @@ class MemoListVC: BaseViewController, Storyboarded {
         }
         
         tableView.reloadData()
+    }
+    @IBAction func onTouchAddingMemo(_ sender: Any) {
+        print("onTouchAddingMemo")
     }
 }
 
@@ -80,6 +82,23 @@ extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
         self.data.remove(at: sourceIndexPath.row)
         self.data.insert(moveCell, at: destinationIndexPath.row)
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return  100
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MemoListHeaderView") as! MemoListHeaderView
+
+        headerView.testLabel.text = "\(section)"
+        
+        return headerView
+    }
+    
 }
 
 // MARK:- UITableView UITableViewDragDelegate
