@@ -8,11 +8,10 @@
 import UIKit
 
 class MemoListHeaderView : UITableViewHeaderFooterView {
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.testLabel.text = ""
     }
 }

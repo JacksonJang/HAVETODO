@@ -67,4 +67,3 @@ func getTodayDay() -> String {
     
     return dateString
 }
-

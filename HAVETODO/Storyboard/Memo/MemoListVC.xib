@@ -30,26 +30,8 @@
                                 <constraint firstAttribute="height" constant="60" id="d5m-ld-k35"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLL-xS-RXB">
-                            <rect key="frame" x="0.0" y="60" width="414" height="40"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 12월 10일 - 오늘 - 금요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RX-Mz-tm6">
-                                    <rect key="frame" x="10" y="10.5" width="394" height="19.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="1RX-Mz-tm6" secondAttribute="trailing" constant="10" id="dbf-Ir-5wm"/>
-                                <constraint firstItem="1RX-Mz-tm6" firstAttribute="leading" secondItem="OLL-xS-RXB" secondAttribute="leading" constant="10" id="gi3-OY-KDv"/>
-                                <constraint firstAttribute="height" constant="40" id="kUh-Kp-wze"/>
-                                <constraint firstItem="1RX-Mz-tm6" firstAttribute="centerY" secondItem="OLL-xS-RXB" secondAttribute="centerY" id="lgq-FK-MYm"/>
-                            </constraints>
-                        </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z78-xZ-ccD">
-                            <rect key="frame" x="0.0" y="100" width="414" height="718"/>
+                            <rect key="frame" x="0.0" y="60" width="414" height="758"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9T-ru-FOc">
@@ -88,14 +70,11 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Z78-xZ-ccD" secondAttribute="trailing" id="0PC-Oo-caC"/>
-                        <constraint firstItem="OLL-xS-RXB" firstAttribute="leading" secondItem="twT-D3-oUi" secondAttribute="leading" id="2Db-0l-CMX"/>
                         <constraint firstItem="Z78-xZ-ccD" firstAttribute="leading" secondItem="twT-D3-oUi" secondAttribute="leading" id="2Ts-8X-RW4"/>
-                        <constraint firstItem="OLL-xS-RXB" firstAttribute="top" secondItem="WbK-RZ-p31" secondAttribute="bottom" id="Fyk-d8-rrd"/>
-                        <constraint firstItem="Z78-xZ-ccD" firstAttribute="top" secondItem="OLL-xS-RXB" secondAttribute="bottom" id="J06-GK-dTx"/>
                         <constraint firstAttribute="trailing" secondItem="WbK-RZ-p31" secondAttribute="trailing" id="OoP-JJ-u2D"/>
                         <constraint firstItem="WbK-RZ-p31" firstAttribute="top" secondItem="twT-D3-oUi" secondAttribute="top" id="RsJ-yF-YQN"/>
                         <constraint firstAttribute="bottom" secondItem="u9T-ru-FOc" secondAttribute="bottom" constant="20" id="XmA-aN-piC"/>
-                        <constraint firstAttribute="trailing" secondItem="OLL-xS-RXB" secondAttribute="trailing" id="bRo-ta-OS2"/>
+                        <constraint firstItem="Z78-xZ-ccD" firstAttribute="top" secondItem="WbK-RZ-p31" secondAttribute="bottom" id="ZWJ-Mq-dsI"/>
                         <constraint firstAttribute="trailing" secondItem="u9T-ru-FOc" secondAttribute="trailing" constant="20" id="dqz-Ag-REL"/>
                         <constraint firstItem="WbK-RZ-p31" firstAttribute="leading" secondItem="twT-D3-oUi" secondAttribute="leading" id="gsi-K1-OxJ"/>
                         <constraint firstAttribute="bottom" secondItem="Z78-xZ-ccD" secondAttribute="bottom" id="mp5-Fd-cD3"/>

@@ -31,6 +31,7 @@
 		3E7CEB4227586088008219CC /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7CEB4127586088008219CC /* Security.swift */; };
 		E22B02842764BD37007519A4 /* MemoListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B02832764BD37007519A4 /* MemoListHeaderView.swift */; };
 		E22B02862764BD50007519A4 /* MemoListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E22B02852764BD50007519A4 /* MemoListHeaderView.xib */; };
+		E22B02882765FB5C007519A4 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B02872765FB5C007519A4 /* Week.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		3E7CEB4127586088008219CC /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
 		E22B02832764BD37007519A4 /* MemoListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListHeaderView.swift; sourceTree = "<group>"; };
 		E22B02852764BD50007519A4 /* MemoListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoListHeaderView.xib; sourceTree = "<group>"; };
+		E22B02872765FB5C007519A4 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				3E7CEB182753A87F008219CC /* UIViewController+Extensions.swift */,
 				3E7CEB4127586088008219CC /* Security.swift */,
 				3E3BF505275A09F70014B18D /* Authentication.swift */,
+				E22B02872765FB5C007519A4 /* Week.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E7CEB0F2753A6FF008219CC /* SplashVC.swift in Sources */,
+				E22B02882765FB5C007519A4 /* Week.swift in Sources */,
 				3E7CEAEE2753A496008219CC /* AppDelegate.swift in Sources */,
 				3E3BF516275CB5650014B18D /* MemoListVC.swift in Sources */,
 				3E3BF4FE275A06970014B18D /* main_temp.swift in Sources */,

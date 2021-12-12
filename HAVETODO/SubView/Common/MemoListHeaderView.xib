@@ -5,34 +5,55 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" interfaceStyle="light" id="iN0-l3-epB" customClass="MemoListHeaderView" customModule="HAVETODO" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ap-SW-IYX">
-                    <rect key="frame" x="190.5" y="19.5" width="33" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ya-Vj-Hn4">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 12월 10일 - 오늘 - 금요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1g2-CU-9fD">
+                            <rect key="frame" x="10" y="10.5" width="394" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="1g2-CU-9fD" firstAttribute="centerY" secondItem="5ya-Vj-Hn4" secondAttribute="centerY" id="Mbe-oS-4vv"/>
+                        <constraint firstAttribute="height" constant="40" id="YQJ-by-7QA"/>
+                        <constraint firstAttribute="trailing" secondItem="1g2-CU-9fD" secondAttribute="trailing" constant="10" id="ZfS-bA-Qa2"/>
+                        <constraint firstItem="1g2-CU-9fD" firstAttribute="leading" secondItem="5ya-Vj-Hn4" secondAttribute="leading" constant="10" id="ira-RZ-iAy"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="dAj-8G-ktM"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="8ap-SW-IYX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dsZ-0X-EwI"/>
-                <constraint firstItem="8ap-SW-IYX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yCS-Zz-JGp"/>
+                <constraint firstItem="5ya-Vj-Hn4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3hW-il-P6H"/>
+                <constraint firstItem="5ya-Vj-Hn4" firstAttribute="leading" secondItem="dAj-8G-ktM" secondAttribute="leading" id="5Zg-ec-LTL"/>
+                <constraint firstAttribute="bottom" secondItem="5ya-Vj-Hn4" secondAttribute="bottom" id="Ae0-1H-GA3"/>
+                <constraint firstItem="5ya-Vj-Hn4" firstAttribute="trailing" secondItem="dAj-8G-ktM" secondAttribute="trailing" id="EOd-Yg-biD"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="testLabel" destination="8ap-SW-IYX" id="cS2-KG-YjV"/>
+                <outlet property="titleLabel" destination="1g2-CU-9fD" id="iKx-xA-F9T"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
