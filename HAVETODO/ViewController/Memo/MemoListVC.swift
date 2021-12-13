@@ -87,6 +87,7 @@ extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoListCell", for: indexPath) as! MemoListCell
         
+        cell.selectionStyle = .none
         cell.titleLabel.text = data[indexPath.row] + String(indexPath.row)
         
         return cell
@@ -108,6 +109,7 @@ extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
         self.data.insert(moveCell, at: destinationIndexPath.row)
     }
     
+    //MARK: - 헤더 관리
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return  40
     }

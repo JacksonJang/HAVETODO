@@ -32,6 +32,10 @@
 		E22B02842764BD37007519A4 /* MemoListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B02832764BD37007519A4 /* MemoListHeaderView.swift */; };
 		E22B02862764BD50007519A4 /* MemoListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E22B02852764BD50007519A4 /* MemoListHeaderView.xib */; };
 		E22B02882765FB5C007519A4 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B02872765FB5C007519A4 /* Week.swift */; };
+		E22B028B27678338007519A4 /* DrawerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E22B028A27678338007519A4 /* DrawerVC.xib */; };
+		E22B028E27678354007519A4 /* DrawerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B028D27678354007519A4 /* DrawerVC.swift */; };
+		E22B029027678421007519A4 /* CommonHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E22B028F27678421007519A4 /* CommonHeaderView.xib */; };
+		E22B02922767842A007519A4 /* CommonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B02912767842A007519A4 /* CommonHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		E22B02832764BD37007519A4 /* MemoListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListHeaderView.swift; sourceTree = "<group>"; };
 		E22B02852764BD50007519A4 /* MemoListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoListHeaderView.xib; sourceTree = "<group>"; };
 		E22B02872765FB5C007519A4 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
+		E22B028A27678338007519A4 /* DrawerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerVC.xib; sourceTree = "<group>"; };
+		E22B028D27678354007519A4 /* DrawerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerVC.swift; sourceTree = "<group>"; };
+		E22B028F27678421007519A4 /* CommonHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonHeaderView.xib; sourceTree = "<group>"; };
+		E22B02912767842A007519A4 /* CommonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,8 @@
 			children = (
 				E22B02832764BD37007519A4 /* MemoListHeaderView.swift */,
 				E22B02852764BD50007519A4 /* MemoListHeaderView.xib */,
+				E22B02912767842A007519A4 /* CommonHeaderView.swift */,
+				E22B028F27678421007519A4 /* CommonHeaderView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -164,6 +174,7 @@
 		3E7CEB032753A5F8008219CC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E22B028C2767834A007519A4 /* Drawer */,
 				3E3BF50F275CB3DA0014B18D /* Memo */,
 				3E7CEB0D2753A6ED008219CC /* Main */,
 				3E7CEB0C2753A6E7008219CC /* Splash */,
@@ -234,6 +245,7 @@
 		3E7CEB112753A720008219CC /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				E22B0289276782B1007519A4 /* Drawer */,
 				3E3BF510275CB4010014B18D /* Memo */,
 				3E3BF50C275CB0F10014B18D /* Main */,
 				3E7CEB142753A7B2008219CC /* Splash */,
@@ -255,6 +267,22 @@
 				3E7CEB162753A7EE008219CC /* Storyboarded.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E22B0289276782B1007519A4 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				E22B028A27678338007519A4 /* DrawerVC.xib */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		E22B028C2767834A007519A4 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				E22B028D27678354007519A4 /* DrawerVC.swift */,
+			);
+			path = Drawer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,8 +347,10 @@
 				3E3BF50E275CB1110014B18D /* MainVC.storyboard in Resources */,
 				3E7CEAFA2753A498008219CC /* LaunchScreen.storyboard in Resources */,
 				3E7CEAF72753A498008219CC /* Assets.xcassets in Resources */,
+				E22B028B27678338007519A4 /* DrawerVC.xib in Resources */,
 				3E07CED92761E9EF0058F92E /* MemoListCell.xib in Resources */,
 				3E7CEB132753A746008219CC /* SplashVC.storyboard in Resources */,
+				E22B029027678421007519A4 /* CommonHeaderView.xib in Resources */,
 				E22B02862764BD50007519A4 /* MemoListHeaderView.xib in Resources */,
 				3E3BF514275CB55A0014B18D /* MemoListVC.xib in Resources */,
 				3E7CEAF52753A496008219CC /* Main.storyboard in Resources */,
@@ -338,6 +368,7 @@
 				E22B02882765FB5C007519A4 /* Week.swift in Sources */,
 				3E7CEAEE2753A496008219CC /* AppDelegate.swift in Sources */,
 				3E3BF516275CB5650014B18D /* MemoListVC.swift in Sources */,
+				E22B028E27678354007519A4 /* DrawerVC.swift in Sources */,
 				3E3BF4FE275A06970014B18D /* main_temp.swift in Sources */,
 				3E3BF506275A09F70014B18D /* Authentication.swift in Sources */,
 				3E3BF50B275CB0ED0014B18D /* MainVC.swift in Sources */,
@@ -347,6 +378,7 @@
 				3E3BF502275A06DB0014B18D /* anti_debug.c in Sources */,
 				3E7CEB192753A87F008219CC /* UIViewController+Extensions.swift in Sources */,
 				3E07CED72761E9E60058F92E /* MemoListCell.swift in Sources */,
+				E22B02922767842A007519A4 /* CommonHeaderView.swift in Sources */,
 				3E7CEB0B2753A6D4008219CC /* Extensions.swift in Sources */,
 				E22B02842764BD37007519A4 /* MemoListHeaderView.swift in Sources */,
 				3E7CEB4227586088008219CC /* Security.swift in Sources */,
