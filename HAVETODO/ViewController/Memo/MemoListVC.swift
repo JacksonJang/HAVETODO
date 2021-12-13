@@ -39,7 +39,11 @@ class MemoListVC: BaseViewController, Storyboarded {
         tableView.dragInteractionEnabled = true
         tableView.register(UINib(nibName: "MemoListCell", bundle: nil), forCellReuseIdentifier: "MemoListCell")
         tableView.register(UINib(nibName: "MemoListHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "MemoListHeaderView")
-
+        
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
+        
         setupData()
         setupUI()
     }
