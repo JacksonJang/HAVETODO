@@ -8,15 +8,16 @@
 import UIKit
 
 class CommonHeaderView : UIView {
-    
-    @IBOutlet var view: UIView!
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        Bundle.main.loadNibNamed("CommonHeaderView", owner: self, options: nil)
-        self.addSubview(view)
-        view.frame = self.bounds
+        let identifier = String(describing: type(of: self))
+        let nibs = Bundle.main.loadNibNamed(identifier, owner: self, options: nil)
+        
+        guard let customView = nibs?.first as? UIView else {return}
+        customView.frame = self.bounds
+        self.addSubview(customView)
         
         self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.autoresizesSubviews = true
