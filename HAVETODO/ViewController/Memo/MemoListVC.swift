@@ -22,7 +22,7 @@ class MemoListVC: BaseViewController, Storyboarded {
     
     @IBOutlet var tableView: UITableView!
     
-    var data:[String] = []
+    var data:[[String]] = [["test1","test2","test3"], ["test4","test5","test6"], ["test7","test8","test9"]]
     var headerView:MemoListHeaderView!
     
     var arrTitleList:[String] = [] //타이틀 리스트 (매일반복, 오늘, 기한이 지난 일)
@@ -45,11 +45,6 @@ class MemoListVC: BaseViewController, Storyboarded {
     }
     
     func setupUI() {
-        var i = 0
-        while(i < 10){
-            self.data.append("test")
-            i += 1
-        }
         
         tableView.reloadData()
     }
@@ -76,7 +71,7 @@ class MemoListVC: BaseViewController, Storyboarded {
 
 extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return data[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,7 +79,7 @@ extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoListCell", for: indexPath) as! MemoListCell
         
         cell.selectionStyle = .none
-        cell.titleLabel.text = data[indexPath.row] + String(indexPath.row)
+        cell.titleLabel.text = data[indexPath.section][indexPath.row]
         
         return cell
     }
@@ -99,10 +94,10 @@ extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
     
     // Move Row Instance Method
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        print("\(sourceIndexPath.row) -> \(destinationIndexPath.row)")
-        let moveCell = self.data[sourceIndexPath.row]
-        self.data.remove(at: sourceIndexPath.row)
-        self.data.insert(moveCell, at: destinationIndexPath.row)
+        print("출발 section 명 : \(sourceIndexPath.section) ㅣ index명 : \(sourceIndexPath.row) -> 도착 section 명 : \(destinationIndexPath.section) ㅣ index명 :  \(destinationIndexPath.row)")
+        let moveCell = self.data[sourceIndexPath.section][sourceIndexPath.row]
+        self.data[sourceIndexPath.section].remove(at: sourceIndexPath.row)
+        self.data[destinationIndexPath.section].insert(moveCell, at: destinationIndexPath.row)
     }
     
     //MARK: - 헤더 관리
