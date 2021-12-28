@@ -17,17 +17,43 @@
 
 import UIKit
 
+struct MemoList: Codable {
+    var data:[[Memo]]
+}
+
+struct Memo: Codable {
+    var title:String
+    
+    //TODO: 앞으로 추가할 속성들임
+//    var content:String
+//    var priority:String
+//    var createDate:String
+//    var updateDate:String
+    
+}
+
 class MemoListVC: BaseViewController, Storyboarded {
     static var storyboardName: String = String(describing: MemoListVC.self)
     
     @IBOutlet var tableView: UITableView!
     
-    var data:[[String]] = [["test1","test2","test3"], ["test4","test5","test6"], ["test7","test8","test9"]]
-    var headerView:MemoListHeaderView!
+    //TODO: jsonString은 테스트 데이터이니 삭제해야함
+    var jsonString = """
+                     {
+                        "data" : [
+                            [{"title" : "test1"}],
+                            [{"title" : "test2"}],
+                            [{"title" : "test3"}]
+                        ]
+                     }
+                    """
     
+    
+    var data: [[Memo]] = []
     var arrTitleList:[String] = [] //타이틀 리스트 (매일반복, 오늘, 기한이 지난 일)
-    var strTodayTitle:String = ""
-    var strTodayDate:String = ""
+    var strTodayTitle:String = "" //헤더 오늘 날짜값
+    
+    var headerView:MemoListHeaderView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +65,15 @@ class MemoListVC: BaseViewController, Storyboarded {
         tableView.dragInteractionEnabled = true
         tableView.register(UINib(nibName: "MemoListCell", bundle: nil), forCellReuseIdentifier: "MemoListCell")
         tableView.register(UINib(nibName: "MemoListHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "MemoListHeaderView")
+        
+        let jsonData = jsonString.data(using: .utf8)!
+        
+        let decoder = JSONDecoder()
+        let memoList = try? decoder.decode(MemoList.self, from: jsonData)
+        
+        for item in memoList!.data {
+            data.append(item)
+        }
         
         setupData()
         setupUI()
@@ -79,7 +114,7 @@ extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoListCell", for: indexPath) as! MemoListCell
         
         cell.selectionStyle = .none
-        cell.titleLabel.text = data[indexPath.section][indexPath.row]
+        cell.titleLabel.text = data[indexPath.section][indexPath.row].title
         
         return cell
     }
