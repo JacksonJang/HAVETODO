@@ -27,8 +27,9 @@ func openAppSetting(){
 func getTodayDate() -> String {
     let today = Date() //현재 시각 구하기
     let dateFormatter = DateFormatter()
+    dateFormatter.timeZone = TimeZone(abbreviation: "KST")
     dateFormatter.locale = Locale(identifier: "ko_KR")
-    dateFormatter.dateFormat = "YYYYMMddHHmmss"
+    dateFormatter.dateFormat = "yyyyMMddHHmmss"
     
     let dateString = dateFormatter.string(from: today)
     
