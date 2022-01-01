@@ -6,6 +6,6 @@ target 'HAVETODO' do
   use_frameworks!
 
   # Pods for HAVETODO
-  pod 'IQKeyboardManagerSwift', '6.3.0'
+  pod 'JangNetwork'
 
 end

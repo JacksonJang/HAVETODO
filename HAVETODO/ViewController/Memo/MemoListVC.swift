@@ -16,20 +16,24 @@
  */
 
 import UIKit
+import JangNetwork
 
 struct MemoList: Codable {
-    var data:[[Memo]]
+    var idx:Int
+    var data:[String:[Memo]]
+    
+    enum CodingKeys: String, CodingKey {
+        case idx = "idx"
+        case data = "data"
+    }
 }
 
 struct Memo: Codable {
     var title:String
-    
-    //TODO: 앞으로 추가할 속성들임
-//    var content:String
-//    var priority:String
-//    var createDate:String
-//    var updateDate:String
-    
+    var content:String
+    var priority:Int
+    var createDate:String
+    var updateDate:String
 }
 
 class MemoListVC: BaseViewController, Storyboarded {
@@ -37,27 +41,20 @@ class MemoListVC: BaseViewController, Storyboarded {
     
     @IBOutlet var tableView: UITableView!
     
-    //TODO: jsonString은 테스트 데이터이니 삭제해야함
-    var jsonString = """
-                     {
-                        "data" : [
-                            [{"title" : "test1"}],
-                            [{"title" : "test2"}],
-                            [{"title" : "test3"}]
-                        ]
-                     }
-                    """
-    
-    
     var data: [[Memo]] = []
-    var arrTitleList:[String] = [] //타이틀 리스트 (매일반복, 오늘, 기한이 지난 일)
-    var strTodayTitle:String = "" //헤더 오늘 날짜값
+    var sectionTitleList:[String] = [] //타이틀 리스트 (매일반복, 오늘, 기한이 지난 일)
     
     var headerView:MemoListHeaderView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupDelegate()
+        setupTitleData()
+        parseJSONDataToModel()
+    }
+    
+    func setupDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.dragDelegate = self
@@ -65,38 +62,52 @@ class MemoListVC: BaseViewController, Storyboarded {
         tableView.dragInteractionEnabled = true
         tableView.register(UINib(nibName: "MemoListCell", bundle: nil), forCellReuseIdentifier: "MemoListCell")
         tableView.register(UINib(nibName: "MemoListHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "MemoListHeaderView")
-        
-        let jsonData = jsonString.data(using: .utf8)!
-        
-        let decoder = JSONDecoder()
-        let memoList = try? decoder.decode(MemoList.self, from: jsonData)
-        
-        for item in memoList!.data {
-            data.append(item)
-        }
-        
-        setupData()
-        setupUI()
     }
     
-    func setupUI() {
-        
-        tableView.reloadData()
-    }
-    
-    func setupData() {
-        arrTitleList.removeAll()
+    func setupTitleData() {
+        sectionTitleList.removeAll()
         
         let year = getTodayYear()
         let month = getTodayMonth()
         let day = getTodayDay()
         
         //형식 : 오늘 (2021년 12월 10일 금요일)
-        strTodayTitle = "오늘 (\(year)년 \(month)월 \(day)일 \(getWeekDay(atYear: Int(year)!, atMonth: Int(month)!, atDay: Int(day)!))요일)"
+        let sectionTitleForToday = "오늘 (\(year)년 \(month)월 \(day)일 \(getWeekDay(atYear: Int(year)!, atMonth: Int(month)!, atDay: Int(day)!))요일)"
         
-        arrTitleList.append("매일 반복")
-        arrTitleList.append(strTodayTitle)
-        arrTitleList.append("기한이 지난 일")
+        sectionTitleList.append("매일 반복")
+        sectionTitleList.append(sectionTitleForToday)
+        sectionTitleList.append("기한이 지난 일")
+    }
+    
+    func parseJSONDataToModel() {
+        JN.request(url: "https://gist.githubusercontent.com/JacksonJang/471f451c9905fb7f79e934079234b2ba/raw/8ef48a61e1d8ab7164b0c734bb30be16d8383327/Memo.json"){ result in
+            
+            switch result {
+                case .success(let data):
+                    let decoder = JSONDecoder()
+                    let memoList = try? decoder.decode(MemoList.self, from: data)
+                
+                    if let data = memoList!.data["everyday"] {
+                        self.data.append(data)
+                    }
+                    
+                    if let data = memoList!.data["today"] {
+                        self.data.append(data)
+                    }
+                    
+                    if let data = memoList!.data["tomorrow"] {
+                        self.data.append(data)
+                    }
+                    
+                    self.tableView.reloadData()
+                    break
+                case .failure(let error):
+                break
+                    // do somthing with the result in failure
+            }
+            
+        }
+        
     }
     
     @IBAction func onTouchAddingMemo(_ sender: Any) {
@@ -106,6 +117,10 @@ class MemoListVC: BaseViewController, Storyboarded {
 
 extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //TODO: everyday, today, tomorrow 중 누락된게 있으면 개수 에러남. 에러 해결 필요
+        if data.count == 0 {
+            return 0
+        }
         return data[section].count
     }
     
@@ -141,7 +156,7 @@ extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return arrTitleList.count
+        return sectionTitleList.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -151,13 +166,13 @@ extension MemoListVC: UITableViewDelegate, UITableViewDataSource{
         
         switch section {
         case 0 :
-            headerView.titleLabel.text = arrTitleList[section]
+            headerView.titleLabel.text = sectionTitleList[section]
             break
         case 1 :
-            headerView.titleLabel.text = arrTitleList[section]
+            headerView.titleLabel.text = sectionTitleList[section]
             break
         case 2:
-            headerView.titleLabel.text = arrTitleList[section]
+            headerView.titleLabel.text = sectionTitleList[section]
             break
         default :
             headerView.titleLabel.text = "기타"

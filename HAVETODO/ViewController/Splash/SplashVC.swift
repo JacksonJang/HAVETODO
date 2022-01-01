@@ -15,6 +15,7 @@ class SplashVC: BaseViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(getTodayDate())
     }
     
     @IBAction func onTouchTest(_ sender: UIButton) {
